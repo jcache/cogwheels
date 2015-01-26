@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+var Cogwheels   = require('../lib/cogwheels')
+  , fs          = require('fs')
+;
+
+var contents = fs.readFileSync('/dev/stdin').toString();
+
+var compiler = new Cogwheels.Application({ data: contents, paths: Cogwheels.config.get('paths')});
+
+compiler.minify(function(err, minified) {
+  if (err) {
+    console.error(err);
+    return;
+  }
+
+  console.log(minified);
+});
