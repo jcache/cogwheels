@@ -7,6 +7,11 @@ echo "Installing node-sass binaries manually. This may take a while."
 
 gyp_bin=$(which node-gyp)
 
+if [ ! -z $SKIP_NODE_SASS_RECOMPILE ]; then
+	echo "Skipping node-sass recompile"
+	exit 0
+fi
+
 if [ ! -x "${gyp_bin}" ]; then
 	echo "Please install node-gyp globally, e.g."
 	echo "    npm install -g node-gyp"
@@ -26,12 +31,12 @@ git clone --recursive --quiet https://github.com/sass/node-sass.git > /dev/null 
 cd node-sass
 
 echo "Initializing node-sass submodules..."
-git submodule update --init --recursive --quiet > /dev/null 2>&1
+git submodule update --init --recursive --quiet > /dev/null
 
 echo "Installing node-sass dependencies..."
-npm install > /dev/null 2>&1
+npm install > /dev/null
 
 echo "Recompiling node-sass binary..."
-"${gyp_bin}" rebuild > /dev/null 2>&1
+"${gyp_bin}" rebuild > /dev/null
 
 echo 'Done!'
