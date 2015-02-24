@@ -1,0 +1,8 @@
+@import "foo/layout";
+@import "bar/layout";
+@import "baz/layout";
+@import "quux/layout";
+
+.default-styles {
+  color: green;
+}

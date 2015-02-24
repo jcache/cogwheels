@@ -1,0 +1,10 @@
+@import "colors";
+
+.foo {
+  background-color: $foo-bg-color;
+  color: $foo-color;
+
+  .foo2 {
+    color: darken($foo-color, 25%);
+  }
+}
