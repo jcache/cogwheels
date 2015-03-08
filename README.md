@@ -1,14 +1,13 @@
 # cogwheels
 
+[![Build Status](https://travis-ci.org/scryptmouse/cogwheels.svg)](https://travis-ci.org/scryptmouse/cogwheels)
+
 A bare-metal Sprockets-like SCSS compiler.
 
-## Getting Started
-Install the module with: `npm install cogwheels`
+## Not Production Ready
 
-```javascript
-var cogwheels = require('cogwheels');
-cogwheels.awesome(); // "awesome"
-```
+## Getting Started
+Install the module with: `npm install -g cogwheels`
 
 ## Documentation
 _(Coming soon)_
