@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+/**
+ * Wrap the test execution so that node-sass's aborts are caught
+ * and ignored
+ */
+
+'use strict';
+
+var exec = require(__dirname + '/../lib/retry-signaled').exec;
+
+exec('grunt', { args: ['nodeunit'] });

@@ -1,18 +1,10 @@
 #!/usr/bin/env node
+/**
+ * Wrap the CLI execution so that node-sass's aborts are caught and ignored
+ */
 
-var Cogwheels   = require('../lib/cogwheels')
-  , fs          = require('fs')
-;
+'use strict';
 
-var contents = fs.readFileSync('/dev/stdin').toString();
+var exec = require(__dirname + '/../lib/retry-signaled').exec;
 
-var compiler = new Cogwheels.Application({ data: contents, paths: Cogwheels.config.get('paths')});
-
-compiler.minify(function(err, minified) {
-  if (err) {
-    console.error(err);
-    return;
-  }
-
-  console.log(minified);
-});
+exec(__dirname + '/cogwheels-cli', { include_stdin: true });

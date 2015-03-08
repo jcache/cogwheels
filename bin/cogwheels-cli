@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var CLI = require('../lib/cli');
+
+CLI({
+  stdin:  process.stdin,
+  stdout: process.stdout,
+  stderr: process.stderr,
+  argv:   process.argv
+}).run().finally(CLI.gracefulExit);
