@@ -2,7 +2,10 @@
 
 'use strict';
 
-var CLI = require('../lib/cli');
+var CLI = require('../lib/cli')
+  , Promise = require('bluebird')
+  , TimeoutError = Promise.TimeoutError
+;
 
 CLI({
   stdin:  process.stdin,
