@@ -17,6 +17,12 @@ module.exports = function(grunt) {
       gruntfile: {
         src: 'Gruntfile.js'
       },
+      bin: {
+        options: {
+          jshintrc: 'bin/.jshintrc'
+        },
+        src: ['bin/cogwheels']
+      },
       lib: {
         src: ['lib/**/*.js']
       },

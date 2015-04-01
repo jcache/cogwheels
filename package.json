@@ -29,7 +29,7 @@
     "node": ">= 0.10.0"
   },
   "scripts": {
-    "test": "bin/cogwheels-test"
+    "test": "node --harmony node_modules/.bin/grunt nodeunit"
   },
   "devDependencies": {
     "csslint": "^0.10.0",

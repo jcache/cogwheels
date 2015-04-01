@@ -1,11 +1,10 @@
-#!/usr/bin/env node
+#!/bin/sh
+":" //# vim: set ft=javascript:
+":" //# comment; exec /usr/bin/env node --harmony "$0" "$@"
 
 'use strict';
 
-var CLI = require('../lib/cli')
-  , Promise = require('bluebird')
-  , TimeoutError = Promise.TimeoutError
-;
+var CLI = require('../lib/cli');
 
 CLI({
   stdin:  process.stdin,

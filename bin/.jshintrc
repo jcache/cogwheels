@@ -1,0 +1,5 @@
+{
+  "extends": "../.jshintrc",
+  "-W034": true,
+  "asi": true
+}

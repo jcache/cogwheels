@@ -1,5 +1,7 @@
 {
+  "globalstrict": true,
   "curly": true,
+  "esnext": true,
   "eqeqeq": true,
   "immed": true,
   "newcap": true,
@@ -11,5 +13,9 @@
   "eqnull": true,
   "node": true,
   "laxcomma": true,
-  "strict": true
+  "strict": true,
+  "indent": 2,
+  "globals": {
+    "Promise": true
+  }
 }
