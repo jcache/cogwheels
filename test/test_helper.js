@@ -4,6 +4,7 @@ var path      = require('path')
   , Cogwheels = require('../lib/cogwheels')
   , stream    = require('mock-utf8-stream')
   , resumer   = require('resumer')
+  , csslint   = require('csslint').CSSLint
 ;
 
 exports.Cogwheels = Cogwheels;
@@ -14,6 +15,12 @@ exports.LOAD_PATHS = [
   path.join(__dirname, 'dummy1')
 ];
 
+/**
+ * @return {Boolean}
+ */
+exports.isValidCSS = function isValidCSS(css) {
+  return csslint.verify(css).messages.length === 0;
+};
 
 function CLIOptions() {
   this.stdin  = resumer();

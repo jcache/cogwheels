@@ -17,9 +17,10 @@ function setupCLI(done) {
   done();
 }
 
-exports.withMockedStreams = {
+exports['cli tests'] = {
   setUp: setupCLI,
 
-  withValidData: cliRunner('p { color: black;}', { success: true }),
-  withInvalidData: cliRunner('p { color ')
+  'succeeds with valid css': cliRunner('p { color: black;}', { success: true }),
+
+  'fails with invalid css': cliRunner('p { color ')
 };
